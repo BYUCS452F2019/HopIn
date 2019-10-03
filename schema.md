@@ -3,7 +3,7 @@
 ## user
 
 This table represents users that have registered to use the app. As
-such, it is named `user`.
+such, it is named `user`. test
 
 #### Schema
 
