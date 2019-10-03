@@ -2,18 +2,17 @@
 
 ## user
 
-This table represents users that have registered to use the app. As
-such, it is named `user`. test
+This table represents users that have registered to use the app.
 
 #### Schema
 
-user(user_name, password, driver)
+user(user_id, first_name, last_name, username, password, driver, vehicle_id, org_id, address, city, state, area_code, start_dt, end_dt)
 
-> Primary Key `user_name`
+> Primary Key `user_id`
 
 #### Relationships
 
-The user table contains a `user_name` column that is used as the primary
+The user table contains a `user_id` column that is used as the primary
 key. Most tables described below contain a foreign key that maps to this column.
 
 #### Evidence of Normalization
@@ -23,27 +22,34 @@ table.
 
 #### Column Names
 
-`user_name` - The username for a user.
+`user_id` - primary key
+`first_name` - user's first name
+`last_name` - user's last name
+`username` - username to login
+`password` - password to login (encrypted)
+`driver` - boolean flag if the user is a driver or not
+`vehicle_id` - foreign key to the vehicle they are registered with
+`address` - user's street address
+`city` - user's city
+`state` - user's state
+`area_code` - user's area code
+`start_dt` - date they signed up
+`end_dt` - date they left
 
-`password` - the password for a user.
+## vehicle
 
-`driver` - boolean flag if whether or not you have registered and can be a driver 
-
-## Vehicle
-When someone registers to be a driver they put in the
+This table represents the vehicles that have been registered to drive
 
 #### Schema
 
-user_spell_books(book_id, user_name)
+vehicle(vehicle_id, make, model, year, capacity)
 
-> Foreign Key `book_id`
->
-> Foreign Key `user_name`
+> Primary Key `vehicle_id`
 
 #### Relationships
 
-This table contains 2 foreign keys that link users with their spell
-books.
+The vehicle table contains a `vehicle_id` column that is used as the primary
+key. The user table has a foreign key to this, as well as the pool table.
 
 #### Evidence of Normalization
 
@@ -52,27 +58,27 @@ table.
 
 #### Column Names
 
-`book_id` - The book id a user has access to.
+`vehicle_id` - primary key
+`make` -  make of the car
+`model` -  model of the car
+`year` - year of the car
+`capacity` -  capacity of the car
 
-`user_name` - The user who has access to the corresponding `book_id`.
+## organizations
 
-## spell_book
-
-This table tracks the spells present in a spell book. As such, it is
-named `spell_book`.
+This table represents the various organizations that can be formed within the app.  
+Whether it is for an event, group, company, church event, they all will become an "organization"
 
 #### Schema
 
-spell_book(book_id, spell_id)
+organization(org_id, title, member_limit, admin, start_dt, end_dt)
 
-> Primary Key `book_id`
->
-> Foreign Key `spell_id`
+> Primary Key `org_id`
 
 #### Relationships
 
-This table contains keys (primary and foreign) that describe which
-spells are present in which spellbooks.
+The organization table contains a `org_id` column that is used as the primary
+key. A couple tables have a foreign key to this: pool, participant.
 
 #### Evidence of Normalization
 
@@ -81,24 +87,27 @@ table.
 
 #### Column Names
 
-`book_id` - The book to which a spell belongs.
+`org_id` - primary key
+`title` -  title of the organization
+`member_limit` -  how many people can be associated with the group
+`admin` - who owns the group (foreign key to a user_id)
+`start_dt` -  when the group was created
+`end_dt` -  when the group was deleted
 
-`spell_id` - The spell present in the book.
+## pool
 
-## spells
-
-This table describes spells. As such, it is named `spells`.
+A pool is a specific car of people.  
 
 #### Schema
 
-spell(spell_id, spell_name, level, ritual, casting_time, range, verbal, somatic, material, school, duration, concentration, target, saving_throw, description, higher_levels, damage, damage_type, class, book)
+pool(pool_id, org_id, driver_id, vehicle_id, start_time, start_address, end_time, end_address, start_dt, end_dt)
 
-> Primary Key `spell_id`
+> Primary Key `pool_id`
 
 #### Relationships
 
-This table has a primary key identifying the spell. This primary key is
-referenced in the `spell_book` table.
+The pool table contains a `pool_id` column that is used as the primary
+key. One table uses this as a foreign key, and that's Passenger
 
 #### Evidence of Normalization
 
@@ -107,10 +116,61 @@ table.
 
 #### Column Names
 
-`spell_id` - The spell id
+`pool_id` - primary key
+`org_id` -  foreign key to the organization it's apart of
+`driver_id` -  foreign key to the user who is the driver
+`vehicle_id` - foreign key to the vehicle used in the pool
+`start_time` - when the pool is going to start
+`start_address` - where the pool starts (driver's address)
+`end_time` - when the pool ends
+`end_address` - where the pool finished
+`start_dt` -  when the pool was created
+`end_dt` -  when the pool was deleted
 
-Other columns in this table come from the Dungeons and Dragons Player's Handbook section on spells.
+## passenger
 
-## Additional Information
+A simple table that holds pool_ids and user_ids.  Helps us map a many-to-many relationship between pools and users  
 
-Additional information can be found in the pdf [here](Grimoire%20DB.pdf)
+#### Schema
+
+passenger(pool_id, user_id)
+
+> Primary Key - none
+
+#### Relationships
+
+There is no primary key here, and no other relationships. This table is used to help map many-to-many relationships
+
+#### Evidence of Normalization
+
+The relationship described above is evidence of normalization in this
+table.
+
+#### Column Names
+
+`pool_id` - foreign key to a pool
+`user-id` -  foreign key to a user
+
+## participant
+
+A simple table that holds org_ids and user_ids.  Helps us map a many-to-many relationship between organizations and users  
+
+#### Schema
+
+participant(org_id, user_id)
+
+> Primary Key - none
+
+#### Relationships
+
+There is no primary key here, and no other relationships. This table is used to help map many-to-many relationships
+
+#### Evidence of Normalization
+
+The relationship described above is evidence of normalization in this
+table.
+
+#### Column Names
+
+`org_id` - foreign key to an organization
+`user-id` -  foreign key to a user
