@@ -1,70 +1,70 @@
-import * as functions from 'firebase-functions';
-import { connect } from './config';
+// import * as functions from 'firebase-functions';
+// import { connect } from './config';
 
-import { Hippo } from './entity/Hippo';
-import {Hat} from './entity/Hat';
+// import { Hippo } from './entity/Hippo';
+// import {Hat} from './entity/user';
 
-export const createHippo = functions.https.onRequest(async (request, response) => {
+// export const createHippo = functions.https.onRequest(async (request, response) => {
 
-    const { name, weight } = request.body;
+//     const { name, weight } = request.body;
 
-    try {
-        const connection = await connect();
+//     try {
+//         const connection = await connect();
 
-        const repo = connection.getRepository(Hippo);
+//         const repo = connection.getRepository(Hippo);
 
-        const newHippo = new Hippo();
-        newHippo.name = name;
-        newHippo.weight = weight;
+//         const newHippo = new Hippo();
+//         newHippo.name = name;
+//         newHippo.weight = weight;
 
 
-        const savedHippo = await repo.save(newHippo);
+//         const savedHippo = await repo.save(newHippo);
 
-        response.send(savedHippo);
+//         response.send(savedHippo);
 
-    } catch (error) {
-        response.send(error)
-    }
-
-});
-
-export const getHippos = functions.https.onRequest(async (request, response) => {
-    const connection = await connect();
-    const hippoRepo = connection.getRepository(Hippo);
-
-    const allHippos = await hippoRepo.find();
-    // const someHippos = await hippoRepo.query('Select name from hippo where weight > 5');
-
-    response.send(allHippos)
-});
-
-// export const getHippos = functions.https.onRequest(async (request, response) => {
-
-//     const connection = await connect();
-//     const hippoRepo = connection.getRepository(Hippo);
-
-//     // JOIN Query
-//     const hipposWearingHats = await hippoRepo
-//                                 .createQueryBuilder('hippo')
-//                                 .leftJoinAndSelect('hippo.hats', 'hat')
-//                                 .getMany();
-
-//     response.send(hipposWearingHats);
+//     } catch (error) {
+//         response.send(error)
+//     }
 
 // });
 
+// export const getHippos = functions.https.onRequest(async (request, response) => {
+//     const connection = await connect();
+//     const hippoRepo = connection.getRepository(Hippo);
 
-export const createHat = functions.https.onRequest(async (request, response) => {
+//     const allHippos = await hippoRepo.find();
+//     // const someHippos = await hippoRepo.query('Select name from hippo where weight > 5');
 
-    const { owner, color } = request.body;
+//     response.send(allHippos)
+// });
 
-    const connection = await connect();
-    const repo = connection.getRepository(Hat);
+// // export const getHippos = functions.https.onRequest(async (request, response) => {
 
-    const newHat = new Hat();
-    newHat.owner = owner;
-    newHat.color = color;
+// //     const connection = await connect();
+// //     const hippoRepo = connection.getRepository(Hippo);
 
-    const savedHat = await repo.save(newHat);
-    response.send(savedHat);
-});
+// //     // JOIN Query
+// //     const hipposWearingHats = await hippoRepo
+// //                                 .createQueryBuilder('hippo')
+// //                                 .leftJoinAndSelect('hippo.hats', 'hat')
+// //                                 .getMany();
+
+// //     response.send(hipposWearingHats);
+
+// // });
+
+
+// export const createHat = functions.https.onRequest(async (request, response) => {
+
+//     const { owner, color } = request.body;
+
+//     const connection = await connect();
+//     const repo = connection.getRepository(Hat);
+
+//     const newHat = new Hat();
+//     newHat.owner = owner;
+//     newHat.color = color;
+
+//     const savedHat = await repo.save(newHat);
+//     response.send(savedHat);
+// });

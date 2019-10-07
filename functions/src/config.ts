@@ -1,5 +1,4 @@
 import {ConnectionOptions, Connection, createConnection, getConnection} from 'typeorm';
-// tslint:disable-next-line:no-import-side-effect
 import 'reflect-metadata';
 
 export const prod = process.env.NODE_ENV === 'production';
@@ -7,7 +6,7 @@ export const prod = process.env.NODE_ENV === 'production';
 export const config: ConnectionOptions = {
     name: 'HopIn',
     type: 'mysql',
-    host: '127.0.0.1',
+    host: '104.198.252.79',
     port: 3306,
     username: 'root',
     password: 'byucs4522019',

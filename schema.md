@@ -149,7 +149,7 @@ table.
 #### Column Names
 
 `pool_id` - foreign key to a pool
-`user-id` -  foreign key to a user
+`user_id` -  foreign key to a user
 
 ## participant
 
@@ -173,4 +173,4 @@ table.
 #### Column Names
 
 `org_id` - foreign key to an organization
-`user-id` -  foreign key to a user
+`user_id` -  foreign key to a user
