@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CoreRoutingModule } from './core.routes';
 import { RouterModule } from '@angular/router';
-import { SurveyComponent } from './components';
 import {
   MatToolbarModule,
   MatTabsModule,
@@ -26,6 +25,15 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations/';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {
+  LoginComponent,
+  HomeComponent,
+  NearMeComponent,
+  ProfileComponent,
+  SettingsComponent,
+  MyGroupsComponent,
+  CreateGroupComponent,
+} from './components';
 
 const modulesToExport = [FlexLayoutModule];
 const modules = [
@@ -55,7 +63,15 @@ const modules = [
   MatDialogModule,
   ...modulesToExport,
 ];
-const components = [SurveyComponent];
+const components = [
+  LoginComponent,
+  HomeComponent,
+  NearMeComponent,
+  ProfileComponent,
+  SettingsComponent,
+  MyGroupsComponent,
+  CreateGroupComponent,
+];
 
 @NgModule({
   declarations: [components],
