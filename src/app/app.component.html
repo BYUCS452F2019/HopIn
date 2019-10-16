@@ -1,1 +1,24 @@
-<router-outlet></router-outlet>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="side" fxFlex fxLayout="column" fxLayoutAlign="space-between">
+    <div fxLayout="column">
+      <button mat-button class="side-nav-button" *ngFor="let link of appService?.links" (click)="sidenav.toggle()"
+        [routerLink]="link.link">{{link.name}}</button>
+    </div>
+    <div fxLayout="column" fxLayoutAlign="space-between">
+      <mat-icon routerLink="/profile" class="large-mat-icon">person</mat-icon>
+      <mat-icon routerLink="/settings" class="large-mat-icon">settings_applications</mat-icon>
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="app-main" fxLayout="column" fxLayoutAlign="space-between">
+      <button mat-icon-button class="menu-button" (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <div fxFlex fxLayout="column" class="main" id="main">
+        <div class="content" fxFlex fxLayout="column">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

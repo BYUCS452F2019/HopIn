@@ -27,7 +27,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {
   LoginComponent,
-  HomeComponent,
+  DashboardComponent,
   NearMeComponent,
   ProfileComponent,
   SettingsComponent,
@@ -65,7 +65,7 @@ const modules = [
 ];
 const components = [
   LoginComponent,
-  HomeComponent,
+  DashboardComponent,
   NearMeComponent,
   ProfileComponent,
   SettingsComponent,

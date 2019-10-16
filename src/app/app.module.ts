@@ -8,6 +8,7 @@ import { MatSidenavModule, MatToolbarModule, MatIconModule, MatButtonModule } fr
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
+import { SharedModule } from './shared';
 
 const modules = [
   AppRouting,
@@ -19,6 +20,8 @@ const modules = [
   MatButtonModule,
   HttpClientModule,
   HttpModule,
+  SharedModule,
+  MatIconModule,
   // NgbModule.forRoot(),
 ];
 

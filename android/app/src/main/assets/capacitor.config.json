@@ -1,7 +1,0 @@
-{
-  "appId": "www.HopIn.app",
-  "appName": "HopIn",
-  "bundledWebRuntime": false,
-  "npmClient": "npm",
-  "webDir": "src"
-}

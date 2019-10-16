@@ -1,5 +1,5 @@
 export * from './create-group';
-export * from './home';
+export * from './dashboard';
 export * from './login';
 export * from './my-groups';
 export * from './near-me';

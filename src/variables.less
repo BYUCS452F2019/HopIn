@@ -1,32 +1,43 @@
 /* Color Variables (from Style Guide) */
-@white:#FFFFFF;
-@off-white: #F3F3F3;
-@transparent-white: rgba(255, 255, 255, .6);
+@00dp: #ffffff00;
+@01dp: #ffffff0d;
+@02dp: #ffffff12;
+@03dp: #ffffff14;
+@04dp: #ffffff17;
+@06dp: #ffffff1c;
+@08dp: #ffffff1f;
+@12dp: #ffffff24;
+@16dp: #ffffff26;
+@24dp: #ffffff29;
+
+@white: #ffffff;
+@off-white: #f3f3f3;
+@transparent-white: rgba(255, 255, 255, 0.6);
 @translucent-black: rgba(0, 0, 0, 0.4);
 
-@mtc-blue: #4D6594;
-@accent-blue: #43B2E5;
-@action-orange: #F2813A;
+@mtc-blue: #4d6594;
+@accent-blue: #43b2e5;
+@action-orange: #f2813a;
 
-@black: #221E1F;
-@charcoal: #4A4A4A;
-@green: #51BC95;
-@light-green: #96E2C7;
-@grey: #E6E6E6;
-@light-grey: #A7A8AB;
-@blue-grey: #A6B2C9;
+@black: #221e1f;
+@charcoal: #4a4a4a;
+@green: #51bc95;
+@light-green: #96e2c7;
+@grey: #e6e6e6;
+@light-grey: #a7a8ab;
+@blue-grey: #a6b2c9;
 @red: #ef5459;
-@light-red: #FFA4A6;
-@purple: #7F6DB0;
-@light-purple: #B2A4D8;
-@yellow: #FFC600;
-@light-yellow: #FFE380;
+@light-red: #ffa4a6;
+@purple: #7f6db0;
+@light-purple: #b2a4d8;
+@yellow: #ffc600;
+@light-yellow: #ffe380;
 
 @row-hover: @off-white;
 @top-button-hover: @off-white;
 @row-button-hover: @grey;
 @background-grey: @off-white;
-@natural:  @off-white;
+@natural: @off-white;
 @success: @green;
 @error: @red;
 @warning: @yellow;
@@ -48,7 +59,7 @@
 @button-flat-hover: @off-white;
 //primary action button colors
 @button-primary: @action-orange;
-@button-primary-hover: #E8742B;
+@button-primary-hover: #e8742b;
 @button-primary-disabled: lighten(@button-primary, 25%);
 //secondary action button colors
 @button-secondary: @light-grey;
@@ -56,13 +67,13 @@
 @button-secondary-disabled: lighten(@button-secondary, 25%);
 //navigation button colors
 @button-navigation: @mtc-blue;
-@button-navigation-hover: #3B527E;
+@button-navigation-hover: #3b527e;
 @button-navigation-disabled: lighten(@button-navigation, 25%);
 
 @button-radio: @mtc-blue;
 @button-checked: @accent-blue;
 
-@border-width-xsm: .5px;
+@border-width-xsm: 0.5px;
 @border-width-sm: 1px;
 @border-width-med: 1.5px;
 @border-width-lg: 2px;
@@ -70,9 +81,9 @@
 /* TODO Change once design decisions */
 @column-title-size: 10px;
 @maroon: #800000;
-@input: #A8A9AC;
+@input: #a8a9ac;
 @input-disabled: #cccccc;
-@dropdown-border: #E8E8E8;
+@dropdown-border: #e8e8e8;
 @sidebar-background-hover: @brand-cement-highlight;
 @brand-cement-highlight: #dedede;
 @brand-light-stone: #a7aaac;
@@ -94,73 +105,74 @@
 
 /*New Style Guide Typogrphy*/
 .heading {
-	font-family: @font-family;
-	font-size: @heading-font-size;
-	font-weight: @font-weight-semi-bold;
-	color: @black;
+  font-family: @font-family;
+  font-size: @heading-font-size;
+  font-weight: @font-weight-semi-bold;
+  color: @black;
 }
 
 .subheading {
-	font-family: @font-family;
-	font-size: @subheading-font-size;
-	font-weight: @font-weight-semi-bold;
-	color: @black;
+  font-family: @font-family;
+  font-size: @subheading-font-size;
+  font-weight: @font-weight-semi-bold;
+  color: @black;
 }
 
 .body-text {
-	font-family: @font-family;
-	font-size: @paragraph-font-size;
-	font-weight: @font-weight-regular;
-	color: @black;
+  font-family: @font-family;
+  font-size: @paragraph-font-size;
+  font-weight: @font-weight-regular;
+  color: @black;
 }
 
 .page-title {
-	font-family: @font-family;
-	font-size: @heading-font-size;
-	font-weight: @font-weight-bold;
-	text-transform: uppercase;
-	color: @mtc-blue;
+  font-family: @font-family;
+  font-size: @heading-font-size;
+  font-weight: @font-weight-bold;
+  text-transform: uppercase;
+  color: @mtc-blue;
 }
 
 .honey-header {
-	color: @yellow;
+  color: @yellow;
 }
 
-simple-confirmation{
-	box-shadow: 0 11px 15px -7px rgba(0,0,0,.2), 0 24px 38px 3px rgba(0,0,0,.14), 0 9px 46px 8px rgba(0,0,0,.12);
+simple-confirmation {
+  box-shadow: 0 11px 15px -7px rgba(0, 0, 0, 0.2), 0 24px 38px 3px rgba(0, 0, 0, 0.14),
+    0 9px 46px 8px rgba(0, 0, 0, 0.12);
 }
 
-[z-level="lowest"]{
-	z-index: @z-index-lowest;
+[z-level='lowest'] {
+  z-index: @z-index-lowest;
 }
 
-[z-level="lower"]{
-	z-index: @z-index-lower;
+[z-level='lower'] {
+  z-index: @z-index-lower;
 }
 
-[z-level="0"]{
-	z-index: @z-index-level-0;
+[z-level='0'] {
+  z-index: @z-index-level-0;
 }
 
-[z-level="1"]{
-	z-index: @z-index-level-1;
+[z-level='1'] {
+  z-index: @z-index-level-1;
 }
 
-[z-level="2"]{
-	z-index: @z-index-level-2;
+[z-level='2'] {
+  z-index: @z-index-level-2;
 }
 
-[z-level="3"]{
-	z-index: @z-index-level-3;
+[z-level='3'] {
+  z-index: @z-index-level-3;
 }
 
-[z-level="4"]{
-	z-index: @z-index-level-4;
+[z-level='4'] {
+  z-index: @z-index-level-4;
 }
 
-[z-level="higher"]{
-	z-index: @z-index-higher;
+[z-level='higher'] {
+  z-index: @z-index-higher;
 }
-[z-level="highest"]{
-	z-index: @z-index-highest;
+[z-level='highest'] {
+  z-index: @z-index-highest;
 }
