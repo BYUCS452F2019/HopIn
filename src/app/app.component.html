@@ -5,8 +5,9 @@
         [routerLink]="link.link">{{link.name}}</button>
     </div>
     <div fxLayout="column" fxLayoutAlign="space-between">
-      <mat-icon routerLink="/profile" class="large-mat-icon">person</mat-icon>
-      <mat-icon routerLink="/settings" class="large-mat-icon">settings_applications</mat-icon>
+      <mat-icon routerLink="/profile" class="large-mat-icon" (click)="sidenav.toggle()">person</mat-icon>
+      <mat-icon routerLink="/settings" class="large-mat-icon" (click)="sidenav.toggle()">settings_applications
+      </mat-icon>
     </div>
   </mat-sidenav>
   <mat-sidenav-content>
