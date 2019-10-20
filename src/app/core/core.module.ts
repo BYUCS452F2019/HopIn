@@ -34,6 +34,7 @@ import {
   MyGroupsComponent,
   CreateGroupComponent,
 } from './components';
+import { AgmCoreModule } from '@agm/core';
 
 const modulesToExport = [FlexLayoutModule];
 const modules = [
@@ -61,6 +62,7 @@ const modules = [
   MatNativeDateModule,
   NgbModule,
   MatDialogModule,
+  AgmCoreModule.forRoot({ apiKey: 'AIzaSyCXXGwOMcBoLganV0HKVQECsThdx4Ud6H8' }),
   ...modulesToExport,
 ];
 const components = [

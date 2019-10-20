@@ -1,1 +1,151 @@
-<p>dashboard works!</p>
+<div fxLayout="column" fxLayoutGap="10px">
+  <h2>Monday</h2>
+  <mat-card>
+    <mat-card-header>
+      <div mat-card-avatar class="avatar1"></div>
+      <mat-card-title>Receiving a ride from John Smith</mat-card-title>
+      <mat-card-subtitle>American Fork - Provo 8:30 AM</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <agm-map [latitude]="40.329859" [longitude]="-111.725427" [zoom]="10">
+        <agm-polyline [editable]="true">
+          <agm-polyline-point *ngFor="let data of mondayLines" [latitude]="data.lat" [longitude]="data.lng">
+          </agm-polyline-point>
+        </agm-polyline>
+      </agm-map>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>Message Driver</button>
+      <button mat-button>Share</button>
+      <button mat-flat-button color="warn">Remove</button>
+    </mat-card-actions>
+  </mat-card>
+  <mat-card>
+    <mat-card-header>
+      <div mat-card-avatar class="avatar2"></div>
+      <mat-card-title>Receiving a ride from MaryBeth</mat-card-title>
+      <mat-card-subtitle>Provo - American Fork 5:00 PM</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <agm-map [latitude]="40.329859" [longitude]="-111.725427" [zoom]="10">
+        <agm-polyline [editable]="true">
+          <agm-polyline-point *ngFor="let data of mondayLines" [latitude]="data.lat" [longitude]="data.lng">
+          </agm-polyline-point>
+        </agm-polyline>
+      </agm-map>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>Message Driver</button>
+      <button mat-button>Share</button>
+      <button mat-flat-button color="warn">Remove</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+<div fxLayout="column" fxLayoutGap="10px">
+  <h2>Tuesday</h2>
+  <mat-card>
+    <mat-card-header>
+      <div mat-card-avatar class="avatar3"></div>
+      <mat-card-title>Driving Colin Tank</mat-card-title>
+      <mat-card-subtitle>Lehi - Pleasant Grove 6:30 AM</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <agm-map [latitude]="40.375226" [longitude]="-111.802510" [zoom]="10">
+        <agm-polyline [editable]="true">
+          <agm-polyline-point *ngFor="let data of tuesdayLines" [latitude]="data.lat" [longitude]="data.lng">
+          </agm-polyline-point>
+        </agm-polyline>
+      </agm-map>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>Message Passenger</button>
+      <button mat-button>Share</button>
+      <button mat-flat-button color="warn">Remove</button>
+    </mat-card-actions>
+  </mat-card>
+  <mat-card>
+    <mat-card-header>
+      <div mat-card-avatar class="avatar4"></div>
+      <mat-card-title>Driving Michael Jarvin</mat-card-title>
+      <mat-card-subtitle>Springville - Draper 7:00 PM</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <agm-map [latitude]="40.362144" [longitude]="-111.746135">
+        <agm-polyline [editable]="true">
+          <agm-polyline-point *ngFor="let data of tuesday2Lines" [latitude]="data.lat" [longitude]="data.lng">
+          </agm-polyline-point>
+        </agm-polyline>
+      </agm-map>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>Message Passenger</button>
+      <button mat-button>Share</button>
+      <button mat-flat-button color="warn">Remove</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+<div fxLayout="column" fxLayoutGap="10px">
+  <h2>Wednesday</h2>
+  <mat-card>
+    <mat-card-header>
+      <div mat-card-avatar class="avatar5"></div>
+      <mat-card-title>Driving Avi Kaplan and Scott Hoying</mat-card-title>
+      <mat-card-subtitle>Lehi - Provo 7:30 AM</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <agm-map [latitude]="40.334919" [longitude]="-111.743441" [zoom]="10">
+        <agm-polyline [editable]="true">
+          <agm-polyline-point *ngFor="let data of wednesdayLines" [latitude]="data.lat" [longitude]="data.lng">
+          </agm-polyline-point>
+        </agm-polyline>
+      </agm-map>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>Message Passengers</button>
+      <button mat-button>Share</button>
+      <button mat-flat-button color="warn">Remove</button>
+    </mat-card-actions>
+  </mat-card>
+  <mat-card>
+    <mat-card-header>
+      <div mat-card-avatar class="avatar6"></div>
+      <mat-card-title>Driving Trevor Millar</mat-card-title>
+      <mat-card-subtitle>Provo - Payson 10:00 AM</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <agm-map [latitude]="40.119442" [longitude]="-111.670016" [zoom]="9">
+        <agm-polyline [editable]="true">
+          <agm-polyline-point *ngFor="let data of wednesday2Lines" [latitude]="data.lat" [longitude]="data.lng">
+          </agm-polyline-point>
+        </agm-polyline>
+      </agm-map>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>Message Passenger</button>
+      <button mat-button>Share</button>
+      <button mat-flat-button color="warn">Remove</button>
+    </mat-card-actions>
+  </mat-card>
+  <mat-card>
+    <mat-card-header>
+      <div mat-card-avatar class="avatar7"></div>
+      <mat-card-title>Driving Maddie and Krista</mat-card-title>
+      <mat-card-subtitle>Payson - Orem 1:00 PM</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <agm-map [latitude]="40.167240" [longitude]="-111.729744">
+        <agm-polyline [editable]="true">
+          <agm-polyline-point *ngFor="let data of wednesday3Lines" [latitude]="data.lat" [longitude]="data.lng">
+          </agm-polyline-point>
+        </agm-polyline>
+      </agm-map>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>Message Passengers</button>
+      <button mat-button>Share</button>
+      <button mat-flat-button color="warn">Remove</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

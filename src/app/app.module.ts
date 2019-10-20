@@ -9,6 +9,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { SharedModule } from './shared';
+import { AgmCoreModule } from '@agm/core';
 
 const modules = [
   AppRouting,
@@ -22,6 +23,7 @@ const modules = [
   HttpModule,
   SharedModule,
   MatIconModule,
+  AgmCoreModule.forRoot({ apiKey: 'AIzaSyCXXGwOMcBoLganV0HKVQECsThdx4Ud6H8' }),
   // NgbModule.forRoot(),
 ];
 

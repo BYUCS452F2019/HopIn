@@ -1,18 +1,31 @@
 <mat-sidenav-container>
-  <mat-sidenav #sidenav mode="side" fxFlex fxLayout="column" fxLayoutAlign="space-between">
-    <div fxLayout="column">
-      <button mat-button class="side-nav-button" *ngFor="let link of appService?.links" (click)="sidenav.toggle()"
-        [routerLink]="link.link">{{link.name}}</button>
+  <mat-sidenav #sidenav mode="side">
+    <div>
+      <div fxLayout="row" fxLayoutAlign="space-around center" class="side-nav-header">
+        <mat-icon routerLink="/dashboard" (click)="sidenav.toggle()">directions_car</mat-icon>
+        <div>HopIn</div>
+        <mat-icon routerLink="/create-group" (click)="sidenav.toggle()">group_add</mat-icon>
+      </div>
+      <div fxLayout="column">
+        <button mat-button class="side-nav-button" *ngFor="let link of appService?.links" (click)="sidenav.toggle()"
+          [routerLink]="link.link">
+          <div fxFlex fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="start center">
+            <mat-icon>{{link.icon}}</mat-icon>
+            <div>{{link.name}}</div>
+          </div>
+        </button>
+      </div>
     </div>
-    <div fxLayout="column" fxLayoutAlign="space-between">
-      <mat-icon routerLink="/profile" class="large-mat-icon" (click)="sidenav.toggle()">person</mat-icon>
-      <mat-icon routerLink="/settings" class="large-mat-icon" (click)="sidenav.toggle()">settings_applications
+    <div fxLayout="row" fxLayoutAlign="space-around" class="side-nav-footer">
+      <mat-icon routerLink="/profile" (click)="sidenav.toggle()">person</mat-icon>
+      <div></div>
+      <mat-icon routerLink="/settings" (click)="sidenav.toggle()">settings_applications
       </mat-icon>
     </div>
   </mat-sidenav>
   <mat-sidenav-content>
     <div class="app-main" fxLayout="column" fxLayoutAlign="space-between">
-      <button mat-icon-button class="menu-button" (click)="sidenav.toggle()">
+      <button mat-icon-button class="menu-button" (click)="sidenav.toggle()" *ngIf="router.url !== '/login'">
         <mat-icon>menu</mat-icon>
       </button>
       <div fxFlex fxLayout="column" class="main" id="main">

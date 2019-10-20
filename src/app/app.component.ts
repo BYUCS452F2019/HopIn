@@ -10,7 +10,7 @@ import { NavigationEnd, Router } from '@angular/router';
 export class AppComponent {
   title = 'hopin';
 
-  constructor(public appService: TotalAppService, private router: Router) {
+  constructor(public appService: TotalAppService, public router: Router) {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         (<any>window).ga('set', 'page', event.urlAfterRedirects);
