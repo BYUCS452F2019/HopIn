@@ -16,18 +16,20 @@
         </button>
       </div>
     </div>
-    <div fxLayout="row" fxLayoutAlign="space-around" class="side-nav-footer">
+    <div fxLayout="row" fxLayoutAlign="flex-start" class="side-nav-footer">
       <mat-icon routerLink="/profile" (click)="sidenav.toggle()">person</mat-icon>
-      <div></div>
-      <mat-icon routerLink="/settings" (click)="sidenav.toggle()">settings_applications
-      </mat-icon>
     </div>
   </mat-sidenav>
   <mat-sidenav-content>
     <div class="app-main" fxLayout="column" fxLayoutAlign="space-between">
-      <button mat-icon-button class="menu-button" (click)="sidenav.toggle()" *ngIf="router.url !== '/login'">
-        <mat-icon>menu</mat-icon>
-      </button>
+      <div fxLayout="row" fxLayoutAlign="space-between center">
+        <button mat-icon-button class="menu-button" (click)="sidenav.toggle()" *ngIf="router.url !== '/login'">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <button mat-icon-button class="add-button" routerLink="/add-ride" *ngIf="router.url === '/dashboard'">
+          <mat-icon>add</mat-icon>
+        </button>
+      </div>
       <div fxFlex fxLayout="column" class="main" id="main">
         <div class="content" fxFlex fxLayout="column">
           <router-outlet></router-outlet>

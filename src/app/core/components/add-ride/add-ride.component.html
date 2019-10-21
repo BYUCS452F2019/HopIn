@@ -1,0 +1,160 @@
+<ng-container *ngIf="type === 'add-ride'">
+  <div class="add-ride" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="20px">
+    <button mat-flat-button (click)="type = 'driver'">Be a Driver</button>
+    <mat-divider></mat-divider>
+    <button mat-flat-button (click)="type = 'passenger'">Find a Ride</button>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="type === 'driver'">
+  <div fxLayout="column" fxLayoutGap="20px">
+    <mat-icon (click)="type = 'add-ride'">keyboard_arrow_left</mat-icon>
+    <div>
+      <mat-card>
+
+        <mat-form-field>
+          <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Start Time of Ride">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="End Time of Ride">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Available Passengers">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Start Location">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Destination">
+        </mat-form-field>
+      </mat-card>
+
+    </div>
+
+  </div>
+
+</ng-container>
+
+<ng-container *ngIf="type === 'passenger'">
+
+  <div fxLayout="column" fxLayoutGap="10px">
+    <mat-icon (click)="type = 'add-ride'">keyboard_arrow_left</mat-icon>
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Filter
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <mat-form-field>
+          <input matInput placeholder="Pick Up Location">
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput placeholder="Destination">
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </mat-expansion-panel>
+    </mat-accordion>
+
+    <div fxLayout="column" fxLayoutGap="10px">
+      <mat-card>
+        <mat-card-header>
+          <div mat-card-avatar class="avatar1"></div>
+          <mat-card-title>John Smith</mat-card-title>
+          <mat-card-subtitle>10/24/19 American Fork - Provo 8:30 AM</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-actions>
+          <button mat-button>Message Driver</button>
+          <button mat-button></button>
+          <button mat-flat-button color="primary">Join Ride</button>
+        </mat-card-actions>
+      </mat-card>
+      <mat-card>
+        <mat-card-header>
+          <div mat-card-avatar class="avatar2"></div>
+          <mat-card-title>MaryBeth Allen</mat-card-title>
+          <mat-card-subtitle>10/25/19 Provo - American Fork 5:00 PM</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-actions>
+          <button mat-button>Message Driver</button>
+          <button mat-button></button>
+          <button mat-flat-button color="primary">Join Ride</button>
+        </mat-card-actions>
+      </mat-card>
+      <mat-card>
+        <mat-card-header>
+          <div mat-card-avatar class="avatar3"></div>
+          <mat-card-title>Colin Tank</mat-card-title>
+          <mat-card-subtitle>11/2/19 Lehi - Pleasant Grove 6:30 AM</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-actions>
+          <button mat-button>Message Driver</button>
+          <button mat-button></button>
+          <button mat-flat-button color="primary">Join Ride</button>
+        </mat-card-actions>
+      </mat-card>
+      <mat-card>
+        <mat-card-header>
+          <div mat-card-avatar class="avatar4"></div>
+          <mat-card-title>Michael Jarvin</mat-card-title>
+          <mat-card-subtitle>11/4/19 Springville - Draper 7:00 PM</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-actions>
+          <button mat-button>Message Driver</button>
+          <button mat-button></button>
+          <button mat-flat-button color="primary">Join Ride</button>
+        </mat-card-actions>
+      </mat-card>
+      <mat-card>
+        <mat-card-header>
+          <div mat-card-avatar class="avatar5"></div>
+          <mat-card-title>Scott Hoying</mat-card-title>
+          <mat-card-subtitle>10/28/19 Lehi - Provo 7:30 AM</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-actions>
+          <button mat-button>Message Driver</button>
+          <button mat-button></button>
+          <button mat-flat-button color="primary">Join Ride</button>
+        </mat-card-actions>
+      </mat-card>
+      <mat-card>
+        <mat-card-header>
+          <div mat-card-avatar class="avatar6"></div>
+          <mat-card-title>Trevor Millar</mat-card-title>
+          <mat-card-subtitle>10/31/19 Provo - Payson 10:00 AM</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-actions>
+          <button mat-button>Message Driver</button>
+          <button mat-button></button>
+          <button mat-flat-button color="primary">Join Ride</button>
+        </mat-card-actions>
+      </mat-card>
+      <mat-card>
+        <mat-card-header>
+          <div mat-card-avatar class="avatar7"></div>
+          <mat-card-title>Maddie Filmore</mat-card-title>
+          <mat-card-subtitle>11/1/19 Payson - Orem 1:00 PM</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-actions>
+          <button mat-button>Message Driver</button>
+          <button mat-button></button>
+          <button mat-flat-button color="primary">Join Ride</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+
+
+</ng-container>

@@ -8,6 +8,7 @@ import {
   NearMeComponent,
   SettingsComponent,
   ProfileComponent,
+  AddRideComponent,
 } from './components';
 
 @NgModule({
@@ -19,6 +20,7 @@ import {
     RouterModule.forChild([{ path: 'near-me', component: NearMeComponent }]),
     RouterModule.forChild([{ path: 'profile', component: ProfileComponent }]),
     RouterModule.forChild([{ path: 'settings', component: SettingsComponent }]),
+    RouterModule.forChild([{ path: 'add-ride', component: AddRideComponent }]),
   ],
   exports: [RouterModule],
 })

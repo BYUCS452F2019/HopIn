@@ -20,6 +20,7 @@ import {
   MatDatepickerModule,
   MatNativeDateModule,
   MatDialogModule,
+  MatExpansionModule,
 } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations/';
@@ -33,6 +34,7 @@ import {
   SettingsComponent,
   MyGroupsComponent,
   CreateGroupComponent,
+  AddRideComponent,
 } from './components';
 import { AgmCoreModule } from '@agm/core';
 
@@ -62,6 +64,7 @@ const modules = [
   MatNativeDateModule,
   NgbModule,
   MatDialogModule,
+  MatExpansionModule,
   AgmCoreModule.forRoot({ apiKey: 'AIzaSyCXXGwOMcBoLganV0HKVQECsThdx4Ud6H8' }),
   ...modulesToExport,
 ];
@@ -73,6 +76,7 @@ const components = [
   SettingsComponent,
   MyGroupsComponent,
   CreateGroupComponent,
+  AddRideComponent,
 ];
 
 @NgModule({
