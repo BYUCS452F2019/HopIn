@@ -1,0 +1,41 @@
+.personal-info-container {
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+.additional-info {
+  display: flex;
+  justify-content: center;
+  .box-holder {
+    display:grid;
+    grid-template-columns: 350px 350px;
+    grid-row: auto auto;
+    grid-column-gap: 50px;
+    grid-row-gap: 50px;
+    .info-box {
+      border: 1px solid white;
+      height: 200px;
+      text-align: center;
+      h3 {
+        font-size: 24px;
+      }
+      .sub-title {
+        font-weight: bold;
+        text-decoration: underline;
+      }
+      p {
+        font-size: 16px;
+      }
+    }
+  }
+}
