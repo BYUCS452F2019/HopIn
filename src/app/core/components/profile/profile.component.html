@@ -1,35 +1,35 @@
 <div class="profile-container">
   <div class="personal-info-container">
-    <div class="profile-pic">
-      <img src="assets/images/profile-pic-placholder.jpg">
-    </div>
-    <div class="personal-info">
-      <h1>Robbie Kelly</h1>
-      <h1>RKelly2019</h1>
-      <h1>1234 E 5678 N Lehi, Utah</h1>
-    </div>
+    <mat-card class="profile">
+      <div class="profile-pic">
+        <img src="assets/images/profile-pic-placholder.jpg">
+      </div>
+      <div class="personal-info">
+        <h1>Robbie Kelly</h1>
+        <h1>RKelly2019</h1>
+        <h1>1234 E 5678 N Lehi, Utah</h1>
+      </div>
+    </mat-card>
   </div>
-  <div class="additional-info">
-    <div class="box-holder">
-      <div class="info-box">
-        <h3>Car</h3>
-        <p><span class="sub-title">Make:</span> Ford</p>
-        <p><span class="sub-title">Model:</span> Mustang</p>
-        <p><span class="sub-title">Year:</span> 2019</p>
-        <p><span class="sub-title"> Seats:</span> 4</p>
-      </div>
-      <div class="info-box">
-        <h3>Groups</h3>
-        <p>COMING SOON!</p>
-      </div>
-      <div class="info-box">
-        <h3>Reviews</h3>
-        <p>COMING SOON!</p>
-      </div>
-      <div class="info-box">
-        <h3>Music Preference</h3>
-        <p>COMING SOON!</p>
-      </div>
-    </div>
-  </div>
+  <mat-card>
+    <mat-card-title>Car</mat-card-title>
+    <mat-card-content class="car-content">
+      <p><span class="sub-title">Make:</span> Ford</p>
+      <p><span class="sub-title">Model:</span> Mustang</p>
+      <p><span class="sub-title">Year:</span> 2019</p>
+      <p><span class="sub-title"> Seats:</span> 4</p>
+    </mat-card-content>
+  </mat-card>
+  <mat-card>
+    <mat-card-title>Groups</mat-card-title>
+    <mat-card-content>Comming Soon!</mat-card-content>
+  </mat-card>
+  <mat-card>
+      <mat-card-title>Reviews</mat-card-title>
+      <mat-card-content>Comming Soon!</mat-card-content>
+    </mat-card>
+    <mat-card>
+        <mat-card-title>Music Preference</mat-card-title>
+        <mat-card-content>Comming Soon!</mat-card-content>
+      </mat-card>
 </div>
